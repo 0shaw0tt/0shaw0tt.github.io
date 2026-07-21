@@ -1,17 +1,58 @@
 body {
     /*background-color: blue;*/
-    color: black;
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.35;
+    margin: 14px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
 }
 
 p { /*paragraph*/
-    color: black;
-    font-size: 1rem;
+    font-size: 12px;
+}
+
+a {
+    color: blue;
+}
+
+h1 {
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 12px;
+    color: magenta;
+}
+
+h3 {
+    font-size: 12px;
+    color: coral;
+}
+
+h4 {
+    font-size: 12px;
+    color: orange;
 }
 
 header {
     background-color: blue;
     color: white;
     padding: 10px 0;
-    font-size: 1rem;
+    font-size: 12px;
     /*text-align: center;*/
+}
+
+main img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
 }
