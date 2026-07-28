@@ -1,8 +1,73 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='welcome'>
-    <p>hi</p>
+    (웹사이트 설명)
+    
+    <h1>about me</h1> 
+    <p>This is&nbsp;
+        <a href="/images/me-stretching.JPG" target="_blank" rel="noopener noreferrer">
+        me
+    </a>&nbsp;and this is&nbsp;
+        <a href="/images/cat-laptop.jpeg" target="_blank" rel="noopener noreferrer">
+        my cat
+    </a>.
+    </p>
+
+    <p>You can also find me in&nbsp;
+    <a href="https://instagram.com/ppexrs" target="_blank" rel="noopener noreferrer">
+        instagram
+    </a>.
+    </p>
+
+    <div class="columns">
+        <section>
+            <h1>recently...</h1>
+            [2026.07] made this website 
+        </section>
+
+        <aside>
+            <h1>i suggest you read these [in korean]</h1>
+            <p><a href="/readings/freeman-j-1970-the-tyranny-of-structurelessness/">
+                Jo Freeman, The tyranny of structurelessness
+            </a></p> 
+            <p><a href="/readings/french-s-2025-breaking-the-chain/">
+                Steven French, Breaking the chain
+            </a></p>
+            <p><a href="/readings/shech-e-2026-playing-in-flatland/">
+                Elay Shech, Playing in flatland
+            </a></p>
+            <p><a href="/readings/harrison-p-2025-the-birth-of-naturalism/">
+                Peter Harrison, The birth of naturalism
+            </a></p>
+        </aside>
+    </div>
 </Layout>
+
+<style>
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  aside {
+    border-left: 1px solid #ddd;
+    padding-left: 2rem;
+  }
+
+  @media (max-width: 700px) {
+    .columns {
+      grid-template-columns: 1fr;
+    }
+
+    aside {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid #ddd;
+      padding-top: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import Layout from "./Layout.astro";
+
+const {
+    title,
+    created,
+    source,
+    description,
+    tags = [],
+} = Astro.props.frontmatter;
+---
+
+<Layout title={title}>
+    <article>
+        <h1>{title}</h1>
+
+        <p>
+            original article:{" "}
+            <a href={source} target="_blank" rel="noopener noreferrer">
+                {source}
+            </a>
+        </p>
+
+        <slot />
+    </article>
+</Layout>

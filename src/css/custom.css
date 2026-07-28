@@ -1,6 +1,6 @@
 body {
-    /*background-color: blue;*/
-    font-family: Menlo, Monaco, "Courier New", monospace;
+    background-color: white;
+    font-family: Menlo, Monaco, monospace;
     font-size: 12px;
     line-height: 1.35;
     margin: 14px;
@@ -13,6 +13,7 @@ nav {
 
 p { /*paragraph*/
     font-size: 12px;
+    margin: 4px 0;
 }
 
 a {
@@ -47,7 +48,15 @@ header {
     color: white;
     padding: 10px 0;
     font-size: 12px;
-    /*text-align: center;*/
+    text-align: center;
+}
+
+footer {
+    background-color: blue;
+    color: white;
+    padding: 10px 0;
+    font-size: 12px;
+    text-align: center;
 }
 
 main img {
@@ -55,4 +64,17 @@ main img {
     width: 200px;
     max-width: 100%;
     height: auto;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+.home-button:hover {
+    background-color: black;
+    color: white;
 }
