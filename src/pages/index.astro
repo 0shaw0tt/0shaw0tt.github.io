@@ -1,79 +1,49 @@
 ---
-import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title='welcome'>
-    (웹사이트 설명)
-    
-    <h1>about me</h1> 
-    <p>This is&nbsp;
-        <a href="/images/me-stretching.JPG" target="_blank" rel="noopener noreferrer">
-        me
-    </a>&nbsp;and this is&nbsp;
-        <a href="/images/cat-laptop.jpeg" target="_blank" rel="noopener noreferrer">
-        my cat
-    </a>.
-    </p>
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta charset="utf8">
+        <title>title</title>
+        <meta name="description" value="?">
+        <link rel="stylesheet" href="/css/article.css" type="text/css">
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="/js/footnotes.js" type="text/javascript"></script>
+    </head>
 
-    <p>You can also find me in&nbsp;
-    <a href="https://instagram.com/ppexrs" target="_blank" rel="noopener noreferrer">
-        instagram
-    </a>.
-    </p>
+    <body>
+        <marquee>
+            hello
+        </marquee>
+        <div id="article">
+            <header>
+                <h1>header</h1>
+                <p class="epigraph">
+                    some quote
+                    <br>
+                    - 
+                </p>
+            </header>
+            <h2>h2</h2>
+            <p>
+                some text
+                <a class="footnote" href="#fn1">1</a>
+            </p>
+            <blockquote><p>
+                some note
+            </p></blockquote> 
 
-    <div class="columns">
-        <section>
-            <h1>recently...</h1>
-            [2026.07] made this website 
-        </section>
+            <div class="footnotes">
+                <hr>
+                <ol>
+                    <li id="fn1">
+                        <p>This is the footnote.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>
 
-        <aside>
-            <h1>i suggest you read these [in korean]</h1>
-            <p><a href="/readings/de-sutter-a-2025-the-stagnation-of-physics/">
-                Adrien De Sutter, The stagnation of physics
-            </a></p>
-            <p><a href="/readings/feyerabend-p-1975-how-to-defend-society-against-science/">
-                Paul Feyerabend, How to defend society against science
-            </a></p>
-            <p><a href="/readings/freeman-j-1970-the-tyranny-of-structurelessness/">
-                Jo Freeman, The tyranny of structurelessness
-            </a></p>
-            <p><a href="/readings/french-s-2025-breaking-the-chain/">
-                Steven French, Breaking the chain
-            </a></p>
-            <p><a href="/readings/shech-e-2026-playing-in-flatland/">
-                Elay Shech, Playing in flatland
-            </a></p>
-            <p><a href="/readings/harrison-p-2025-the-birth-of-naturalism/">
-                Peter Harrison, The birth of naturalism
-            </a></p>
-        </aside>
-    </div>
-</Layout>
 
-<style>
-  .columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 2rem;
-  }
-
-  aside {
-    border-left: 1px solid #ddd;
-    padding-left: 2rem;
-  }
-
-  @media (max-width: 700px) {
-    .columns {
-      grid-template-columns: 1fr;
-    }
-
-    aside {
-      border-left: none;
-      padding-left: 0;
-      border-top: 1px solid #ddd;
-      padding-top: 2rem;
-    }
-  }
-</style>
