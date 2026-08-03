@@ -12,8 +12,8 @@ body {
     color: #000;
     /*background: #fff url('grid24.png');*/
     line-height: 24px;
-    font-size: 17px;
-    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    font-family: monospace;
 }
 
 header {
@@ -28,8 +28,8 @@ h1 {
 }
 
 h2 {
-    font-size: 25px;
-    line-height: 48px;
+    font-size: 14px;
+    line-height: 20px;
     padding: 15px 0 9px 0;
 }
 
