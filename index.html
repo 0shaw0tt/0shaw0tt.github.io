@@ -2,11 +2,25 @@
 <html lang="en">
 	<head>
         <meta charset="utf8">
-        <title>title</title>
+        <title>thoughts?</title>
         <meta name="description" value="?">
         <link rel="stylesheet" href="/css/article.css" type="text/css">
 <script src="/js/jquery.js" type="text/javascript"></script>
 <script src="/js/footnotes.js" type="text/javascript"></script>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
     </head>
 
     <body>
@@ -15,7 +29,7 @@
         </marquee>
         <div id="article">
             <header>
-                <h1>header</h1>
+                <h1>thoughts?</h1>
                 <p class="epigraph">
                     some quote
                     <br>
@@ -81,7 +95,178 @@
             <p style="text-align:right; font-style:italic;">2026.08.03</p>
 
             <p style="text-align:center">* * *</p>
+
+                         <h2>What does it mean to measure distance in cosmology?</h2>
+
+<p>The concept that confused me the most while studying the theory of relativity and cosmology was "distance". Taking this opportunity, I would like to examine various distance measures and discuss their commonalities and differences, the advantages of each measure, and how they can be interconnected. Furthermore, I want to briefly discuss whether presenting a distance measure can serve as a definition of distance.</p>
+
+<h3>Distance measures in Cosmology</h3>
+
+<h4>Proper distance</h4>
+
+<p>The main distance measure currently used by cosmologists is proper distance. To explain it intuitively, proper distance is the separation between two distant objects at a given time which would be measured by an imaginary cosmological sized ruler.</p>
+
+<p>It is not directly measurable, so we use various techniques &amp; assumptions. It has always been this way for any distance measure throughout history. Not measuring $x$ to know $x$, but measuring $y$, which is influenced by $x$, and through that, inferring $x$ in a clever way.</p>
+
+<p>We will briefly discuss following distance measures:</p>
+
+<blockquote>
+<p><code>Light travel distance, Comoving distance, Redshift distance</code></p>
+</blockquote>
+
+<h4>Light travel distance</h4>
+
+<p>Let's start with the basics. The most fundamental method for measuring distance on a cosmic scale is to measure the time it takes for light to travel. This is called the light travel distance. To explain it in a more scientific way, light travel distance is the distance travelled by photons emitted by one object and detected on the other object. At an everyday scale, it appears to be no different from the proper distance, but as you go up to a cosmic scale, it becomes clear that there is an increasingly large difference.</p>
+
+<h4>Comoving distance</h4>
+
+<p>We already saw the concept of "comoving distance" when we learn FRW metric:</p>
+
+$$
+ds^{2} = a^{2}(\eta)\left[-c^{2}d\eta^{2}+d\chi^{2}\right]
+$$
+
+<p>where $\eta$ is conformal time, $\chi$ is the comoving (radial) coordinate. And we can get the comoving distance by following relation:</p>
+
+$$
+D_c = a_0 \chi
+$$
+
+<p>To explain it intuitively, comoving distance is the distance measured by an imaginary cosmological sized ruler, which is stretching at exactly the same rate the universe is expanding. We can also say that this is the proper distance which factors out the expansion of the universe. We can find out the comoving distance by the comoving coordinate, and mathematical definition of the comoving coordinate of a comoving object that emitted the light we now see at time $t$ is:</p>
+
+$$
+\chi(t_{emit}) = c\int_{t_{em}}^{t_0} \frac{dt'}{a(t')}
+$$
+
+<p>We can derive this definition of the comoving coordinate (eventually, comoving distance) from FRW metric.<a class="footnote" href="#fn-davis-lineweaver-2004">1</a></p>
+
+<p>Starting from FRW metric,</p>
+
+$$
+ds^{2}=-c^{2}dt^{2}+a(t)^{2}\left[d\chi^{2}+S_k^{2}(\chi)d\psi^{2}\right]
+$$
+
+<p>where $S_k(\chi)$ is about spatial curvature. When we apply $dt=0$ (simultaneity of measurement) and $d\psi=0$ (considering only radial direction), we get</p>
+
+$$
+ds = a(t)d\chi.
+$$
+
+<p>And integrating this, we get</p>
+
+$$
+D(t) = a(t)\chi
+$$
+
+<p>where $D(t)$ is the proper distance. Derivation on $t$ gives us</p>
+
+$$
+\frac{dD}{dt}=\frac{da}{dt}\chi + a\frac{d\chi}{dt} = v_{recession} + v_{peculiar}
+$$
+
+<p>where $v_{recession}$ is the recession velocity of a comoving galaxy, and the peculiar velocity of light is always $c$. $v_{total} = \frac{dD}{dt}$ will be always positive when $v_{recession}c$. But photons find themselves in a region with $v_{rec}c$ because the Hubble sphere expands and overtakes the receding photons.</p>
+
+<p>Now, let's look at the comoving distance $\chi$ between an observer at the origin and a galaxy. Photons travel along null geodesics, so to measure along the path of a photon, we can set $ds=0$. And we set $d\psi=0$ again, to measure radial distances.</p>
+
+$$
+cdt=a(t)d\chi
+$$
+
+<p>This means that</p>
+
+$$
+\frac{d\chi}{dt}=\frac{c}{a(t)}
+$$
+
+<p>which shows that the comoving velocity of the light is slower than $c$. Integrating this with $t'$, we can attain the comoving coordinate of a comoving object that emitted the light we now see at time $t$.</p>
+
+$$
+\chi(t_{emit}) = c\int_{t_{emit}}^{t_0}\frac{dt'}{a(t')}
+$$
+
+<p>Now we have obtained a way to derive the comoving distance with time $t$ as the variable.</p>
+
+<h4>Redshift distance</h4>
+
+<p>However, time $t$ is not the directly observable quantity. So we replace $t$ with the observable quantity, redshift $z$. Redshift distance is the comoving distance described with the parameter $z$.</p>
+
+<p>Use</p>
+
+$$
+1+z=\frac{a(t_{observation})}{a(t_{emission})}
+$$
+
+<p>Derivation on $t$ gives</p>
+
+$$
+\frac{dt}{a(t_{emission})}=-\frac{dz}{a(t_{observation})H(z)}
+$$
+
+<p>And this gives us the direct relationship between redshift and comoving coordinate.</p>
+
+$$
+\chi(z)=\frac{c}{a(t_{observation})}\int_{0}^{z}\frac{dz'}{H(z')}
+$$
+
+<p>since the time of emission becomes $z=0$ while the time of observation becomes the observed redshift $z$. We can see that there is a direct relationship between redshift and comoving distance.</p>
+
+<p>It is interesting that in FRW cosmology, redshift is closely linked to comoving distance. In special relativity, redshift is caused by the relative motion between a source and an observer, and there is a direct correspondence between redshift and velocity. In contrast, in FRW cosmology, as photons propagate through the universe, their wavelengths are stretched along with the expansion of space itself. Therefore, cosmological redshift observed on sufficiently large scales is determined by the history of the universe's expansion rather than the motion of individual galaxies. In this case, redshift is directly linked to changes in the scale factor, and given the FRW metric, the comoving distance can be calculated from the redshift. Consequently, in a cosmological context, redshift is used as a primary observation for estimating distance rather than velocity. This is a famous expression by David Hogg, and to be precise, it is an argument that holds true in an idealized FRW universe that ignores peculiar velocity.<a class="footnote" href="#fn-hogg-1999">2</a></p>
             
+            <h3>Distance measures as an Operational definition</h3>
+
+<p>So far, we have examined various distance measures used in cosmology. Rather than presenting the meaning of distance in cosmology, these measures provide step-by-step instructions on how to indirectly infer distance. What is presented here can be considered an operational definition of distance.</p>
+
+<p>Kip S. Thorne presents an excellent operational definition of distance in his book <i>Black Holes and Time Warps</i>. After first defining the "perfect ruler" as follows,</p>
+
+<blockquote>
+<p>The markings on perfect rulers must have uniform and standard spacings when compared to the wavelengths of the light emitted by atoms and molecules, for example, uniform spacings relative to the "21-centimeter-wavelength" light emitted by hydrogen molecules.<a class="footnote" href="#fn-thorne-1994">3</a></p>
+</blockquote>
+
+<p>It is a method of viewing the number indicated by the scale of that "perfect ruler" as distance. Unlike (philosophical) definitions that directly correspond a concept to a concrete or abstract object, such an operational definition presents only the limited fact that "Distance can be measured through (...)". This allows for the following situation.</p>
+
+<p>The operational definition of distance cannot distinguish between the two paradigms—the "curved spacetime" paradigm and the "flat spacetime" paradigm.</p>
+
+<blockquote>
+<p>Take a ruler and lay it down circumferentially around the hole just outside the horizon (curved thick black strip with ruler markings in right part of Figure 11.1). When oriented circumferentially like this, it does measure correctly the true distance. Cut the ruler off at 57 kilometers length, as shown. It now encompasses 37 percent of the distance around the hole. Then turn the ruler so it is oriented radially (straight thick black strip with ruler markings in Figure 11.1). As it is turned, general relativity requires that it shrink. When pointed radially, its true length must have shrunk to 16 kilometers, so it will reach precisely from the horizon to the outer circle. However, the scale on its shrunken surface must claim that its length is still 37 kilometers, and therefore that the distance between horizon and circle is 37 kilometers. People like Einstein who are unaware of the ruler's rubbery nature, and thus believe its inaccurate measurement, conclude that space is curved. However, people like you and me, who understand the rubberiness, know that the ruler has shrunk and that space is really flat.</p>
+</blockquote>
+
+<p>In other words, regarding the same measurement, the person who views the "perfect ruler" as having contracted in that situation—"flat spacetime"—and the person who fixes the "perfect ruler's" measurement as the absolute standard for determining distance and concludes that space is curved—"curved spacetime"—will differ in their opinion on "what distance is actual distance?". However, if we consider the operational definition as the only definition we can accept, then the two people share a definition of distance.</p>
+
+<h3>Comments on Operational definition</h3>
+
+<p>The perspective explained earlier—that operational definition is the only definition—can be traced back to Bridgman's philosophical technique known as "operational analysis".</p>
+
+<blockquote>
+<p>With the additional stimulus of pondering about the lessons from Albert Einstein's definition of simultaneity in his special theory of relativity, Bridgman formulated the philosophical technique of operational analysis, which always sought to ground meaning in measurement.<a class="footnote" href="#fn-chang-2004">4</a></p>
+</blockquote>
+
+<p>Bridgman's thinking also provides meaningful insights into how to connect and synthesize various operational definitions of distance to make effective use.</p>
+
+<blockquote>
+<p>Such numerical convergence between the results of two different operations was regarded by Bridgman as merely "the practical justification for retaining the same name" for what the two operations measure. Even in such situations, we have to be wary of the danger of slipping into conceptual confusion through the use of the same word to refer to many operations. If our thoughts are not tempered by the operationalist conscience always referring us back to concrete measurement operations, we may get into the sloppy habit of using one word for all sorts of different situations without checking for the required convergence in the overlapping domains.</p>
+</blockquote>
+
+<blockquote>
+<p>Bridgman reminded us so forcefully that measurement operations did not have unlimited domains of application and that our conceptual structures consequently had "joints" at which the same words might continue to be used but the actual operations for measuring them must change.</p>
+</blockquote>
+
+<p>Of course, if we examine the actual progression of theories, we extend concepts and theories into new domains where experience is lacking and observations are inaccurate, even when clear measurement procedures are not presented. Bridgman hoped for something akin to absolute control over the meaning of scientific concepts, but such a thing appears impossible.</p>
+
+            <p style="text-align:right; font-style:italic;">2026.05.29</p>
+
+            <div class="footnotes">
+                <hr>
+                    <ol>
+                        <li id="fn-davis-lineweaver-2004"><p>Tamara M Davis and Charles H Lineweaver. Expanding confusion: common misconceptions of cosmological horizons and the superluminal expansion of the universe. <i>Publications of the Astronomical Society of Australia</i>, 21(1), 2004.</p></li>
+                        <li id="fn-hogg-1999"><p>David W Hogg. Distance measures in cosmology. <i>arXiv preprint astro-ph/9905116</i>, 1999.</p></li>
+                        <li id="fn-thorne-1994"><p>Kip S Thorne. Black holes and time warps: Einstein’s outrageous legacy. W.W. Norton and Company, New York, 1994. ISBN 978-0-393-31276-8.</p></li>
+                        <li id="fn-chang-2004"><p>Hasok Chang. <i>Inventing Temperature: Measurement and Scientific Progress</i>. 07 2004. ISBN 9780195171273. doi: 10.1093/0195171276.001.0001.</p></li>
+                    </ol>
+            </div>
+
+            <p style="text-align:center">* * *</p>
+            
+                       
             <h2>절차로 정의된 시간: 『아인슈타인의 시계, 푸앵카레의 지도』와 특수상대성이론의 재독해</h2>
 
             <p><i><a href="https://behindsciences.kaist.ac.kr/2026/01/08/%ec%8b%9c%ea%b0%84-%ea%b0%9c%eb%85%90%ec%9d%98-%eb%b3%80%ec%b2%9c%ec%82%ac-%eb%ac%bc%eb%a6%ac%ed%95%99%ea%b3%bc-%ec%b2%a0%ed%95%99%ec%9d%98-%ea%b5%90%ec%b0%a8%eb%a1%9c%ec%97%90%ec%84%9c-the-evolutio/" target="_blank" rel="noopener noreferrer">이전에 언급한 글</a>은 피터 갤리슨(Peter Galison)의 책 『아인슈타인의 시계, 푸앵카레의 지도』를 많이 참조하고 있다. 밑의 글에서는 시간 개념이 변화하는 한 지점으로서 특수상대성이론의 의의를 밝히는 데에 해당 책을 참고했다. 이에, 사람들이 특수상대성이론을 이해하는 방식을 변화시킬 수 있는 한 지점으로서 이 책을 바라보는 글을 하나 덧붙이고 싶다.</i></p>
@@ -113,10 +298,10 @@
             <p>이러한 방식이 상대론뿐 아니라 다른 이론들—특히 측정과 표준이 강하게 개입하는 영역—의 성립 과정을 분석하는 데 어떤 추가적인 통찰을 줄 수 있을지 기대하게 된다.</p>
 
             <p style="text-align:right; font-style:italic;">2026.02.17</p>
-            
+
             <div class="footnotes">
                 <hr>
-                <ol>
+                    <ol>
                     <li id="fn-sr-time-criticism">
                         <p>정태을. (2022). 「특수상대성이론의 시간에 대한 베르그손의 비판」. 이화여자대학교 대학원.</p>
                     </li>
@@ -132,7 +317,7 @@
                     <li id="fn-lorentz-1904">
                         <p>Lorentz, H.A. (1904). «Electromagnetic phenomena in a system moving with any velocity less than that of light». In: Collected Papers (Vol. 5). Springer, Dordrecht.</p>
                     </li>
-                </ol>
+                    </ol>
             </div>
 
             <p style="text-align:center">* * *</p>
@@ -145,6 +330,143 @@
             <p>아무튼 이런 철학적/물리학적 논쟁을 서로 연결해서 연속적인 설명을 만들고자 하는 것은 전부 해석의 문제에 해당한다. 그리고 해석의 문제를 딱히 진지하게 받아들일 필요는 없다고 생각한다. 중요한 건 사람들이 대체 뭘 연구해야 한다고 생각했던 건지, 그 생각이 언제/어디까지 유효했는지 이해하는 것이다.</p>
 
             <p style="text-align:right; font-style:italic;">2026.01.08</p>
+
+            <p style="text-align:center">* * *</p>
+
+            <h2>[공유] 더글러스 호프스태터, "정합성의 중요성"</h2>
+
+            <p><i>더글러스 호프스태터의 책 <괴델의 증명>에 수록된 글. 세미나에서 공유받은 이후로 몇 차례 읽어보았다. 논리학에서 내놓는 답변들을 이해하는 데에는 별로 도움이 안 되지만, 질문을 이해하는 데에는 도움이 된다.</i></p>
+
+            <p>수학의 토대에 관한 이러한 비판적 연구 결과로부터 분명하게 드러나게 된 종합적 결론은 수학을 “양(quantity)에 관한 학문”이라고 간주했던 오래된 수학 개념이 부정확할 뿐만 아니라 수학을 오해하게 하는 생각이라는 것이었다. 왜냐하면 수학은 단지 임의로 주어진 일련의 공리나 공준에 논리적으로 함의된 결론을 연역하는 일에 뛰어난 학문일 뿐이라는 생각이 분명해졌기 때문이다. 실제로 수학적 추리의 타당성은 공준에 등장하는 용어나 표현이 지닐 수 있는 어떤 특별한 의미와 전혀 관계가 없다는 사실이 인정받게 되었다. (syntax와 semantics의 분리)<a class="footnote" href="#fn-hofstadter-syntax-semantics">1</a>그래서 수학은 전통적으로 생각해온 것보다 훨씬 더 “추상적인 학문”이자 훨씬 더 “형식적인 학문”이라고 인정받게 되었다. 수학이 종래에 생각하던 것보다 훨씬 더 “추상적인 학문”인 까닭은 수학적 진술이 옛날부터 본질적으로 수학적 대상이라고 규정되어 온 몇몇 대상 ( 수 , 도형 , 그래프 등 ) 또는 그 대상들의 특성에 관한 진술이 아니라 원리적으로 우리가 생각할 수 있는 “모든 대상”에 관한 진술 (다양한 모델에 대한 진술로 확장)이라고 해석될 수 있기 때문이다.<a class="footnote" href="#fn-hofstadter-semantic-domain">2</a>수학이 종래에 생각하던 것보다 훨씬 더 “형식적인 학문”인 까닭은 수학적 증명의 타당성이 특정한 주제의 본성이 아니라 진술들의 구조에 근거를 두고 있기 때문이다. 다시 말하면 논증적 수학에 속하는 모든 분야의 공준은 본래부터 공간이나 양이나 사과나 각이나 생활비에 관한 진술이 아니며, 공준 속의 용어가 지닐 수 있는 어떤 특별한 의미도 정리를 연역하는 과정에서 본질적 역할을 전혀 하지 못하기 때문이다. </p>
+            <p><mark>(수학을 이용하는 과학자와 달리) 순수 수학자가 직면하는 오직 하나의 물음은 자신이 가정한 공준이나 그 공준에서 연역해낸 정리가 옳은가라는 물음이 아니라 오로지 이른바 결론이라는 진술이 실제로 최초의 가정에서 연역되는 논리적 귀결인가 라는 물음이다.</mark><a class="footnote" href="#fn-hofstadter-model">3</a></p>
+            <p>다음의 실례를 살펴보자. 수학계에 큰 영향을 미쳤던 독일의 수학자 힐베르트의 유명한 저작 <기하학의 기초>에서 기하학을 형식적 공리 체계로 구성하면서 사용한 무정의 용어(undefined term), 또는 원초 용어(primitive term)에는 “점”, “선”, “위에 있다”, “사이”가 포함되어 있다. 이런 용어가 지니고 있는 관습적 의미가 정리를 발견하고 학습하는 과정에서 어떤 역할을 한다는 것은 인정될 수 있다. 왜냐하면 누구나 그런 관습적 의미에 익숙하고, 우리가 이런 용어의 다양한 상호 관계를 이해하고 있다고 느끼고, 공리를 명확히 진술하게 하고 선택하게 하는 동기를 우리에게 만들어주기 때문이다. 또한 이런 용어는 우리가 정리로 확립하고 싶은 진술들을 명확히 표현할 방도를 제시하여 도움을 준다. <mark>그렇지만 힐베르트가 명백히 말했듯이 우리가 진술들 사이의 순수한 논리적 의존 관계를 탐구하는 수학 본래의 임무에 종사하는 한 무정의 용어가 지니고 있는 익숙한 관습적 의미는 무시되어야 하며, 어떤 무정의 용어가 지녀야할 유일한 “의미”는 그 무정의 용어가 공리에 들어올 때에 공리에 의해 부여된 의미뿐이다.<a class="footnote" href="#fn-hofstadter-semantic-completeness">4</a></p>
+            <p>“순수 수학은 우리가 무엇에 관하여 말하는지도 모르고 우리가 하는 말이 옳은지 그른지도 모르고 하는 학문이다. (대상이 되는 모델, semantic truth에 대해 모른다)” 라는 러셀의 유명한 경구는 바로 이점을 지적하고 있다.</p>
+            <p>평소에 익숙했던 모든 경계 표지가 완전히 사라져버린 엄격한 추상의 영역<a class="footnote" href="#fn-hofstadter-only-syntax">5</a>을 돌아다니는 것은 확실히 쉽지 않다. 그러나 엄격한 추상의 영역은 우리에게 마음대로 움직일 수 있는 새로운 자유와 멀리까지 펼쳐진 참신한 경치를 보여주는 식으로 보상을 해준다. 수학의 형식적 체계화가 강화됨으로써 인간의 정신은 새로이 만들어지는 공준 체계 속의 표현들을 관습적 의미에 따라 해석해야 한다는 제약에서 해방되었다. 여러 가지 새로운 종류의 대수학과 기하학이 개발되었는데, 그것들은 모두 전통 수학으로부터 크게 이탈하는 특징을 보여주었다. 어떤 용어들이 훨씬 더 일반적인 의미를 갖게 되자 그 용어들을 사용하여 이루어지는 추리는 제한을 덜 받게 되었다. <mark>수학의 형식적 체계화 작업은 수학적으로 상당히 흥미롭고 가치 있는 아주 다양한 체계를 만들어내었다. 이런 체계들 가운데 어떤 것들은 반드시 허용되어야 하는 체계인데도, 유클리드 기하학이나 산술학처럼 명백한 직관적 해석 즉 상식에 맞는 해석을 할 수 없는 체계였다. 이 사실이 수학자들을 놀라게 하지는 못했다.</mark> 직관 능력이 사람에 따라 다르기 때문이다. 더욱이 우리 모두가 알고 있듯이 직관은 믿을만한 안내자가 아니다. <mark>직관은 진리를 가려내는 기준이나 과학적 탐구의 성공을 확인하는 기준 그 어느 쪽으로도 안전하게 사용될 수 없다.</mark></p>
+            <p>하지만 수학의 더욱 높아진 추상성으로 인해서 더 심각한 문제가 생기게 되었다. 어떤 체계의 토대 역할을 하는 <mark>“일련의 공준이 내적 정합성을 갖추고 있기 때문에 그 일련의 공준에서는 서로 모순되는 정리들이 연역될 수 없는가?”</mark>라는 문제가 제기되었다. 이 문제는 일련의 공리가 어떤 명확하고 익숙한 대상 영역에 관한 것으로 취급될때는 심각하게 문제가 되지 않는다. 왜냐하면 그런 경우에는 “공리들이 그 대상들에 대해 정말로 옳은가?” 라는 물음은 의미있는 물음일 뿐 아니라 실제로 답을 확인할 수 있는 물음이기 때문이다. 일례로, 유클리드 기하학의 공리들은 일반적으로 공간에 관한 옳은 진술이라고 간주되었기 때문에 19세기 이전의 어떤 수학자도 유클리드 기하학의 공리들로부터 한 쌍의 모순된 정리가 연역될 수 있을지도 모른다는 의문을 결코 떠올리지 않았다. <mark>유클리드 기하학의 정합성에 대한 이 확신은 논리적으로 양립할 수 없는 진술들이 동시에 모두 옳을 수 없다는 확고한 원리에 근거를 두고 있다. 따라서 만일 일련의 진술이 옳다면 이 일련의 진술은 서로 정합하는 진술들이다.</mark><a class="footnote" href="#fn-hofstadter-semantic-interpretation">6</a> </p>
+            <p>여러 가지 비유클리드 기하학은 유클리드 기하학과는 범주가 분명히 다른 기하학이었다. 비유클리드 기하학의 공리들은 처음부터 실제의 공간에 관해서 명백하게 그른 진술로 간주되었으며, 더욱이 그 공리들이 도대체 무엇에 관해서 옳을 수 있는 진술인가도 분명치 않았다. 따라서 비유클리드 기하학 체계의 내적 정합성을 확립하는 문제는 수학자들에게 만만찮은 문제이면서 결정적인 문제로 인식되었다. (…) 지금까지 연역된 정리들이 서로 모순을 일으키지 않는다는 사실로는 해결되지 않는다. 왜냐하면 바로 다음번에 연역되는 정리가 지금까지 연역된 어느 정리와 모순을 일으킬 가능성이 남아있기 때문이다. 그러므로 이 문제가 해결될 때까지는 누구도 비유클리드 기하학이 유클리드 기하학에 대한 대안, 즉 수학적으로 동등하게 타당한 체계라고 확신할 수 없다. 따라서 비유클리드 기하학의 성립 가능성 자체가 이 정합성 문제의 해결에 달려있게 되었다.<a class="footnote" href="#fn-hofstadter-no-contradiction">7</a> </p>
+            <p><a class="footnote" href="#fn-hofstadter-semantic-consistency-proof">8</a>수학자들은 이 문제를 해결하기 위한 일반적 방법을 고안하였다. 이 방법의 기본 아이디어는 공준들에 맞는 “모형(model)” 이나 “해석(interpretation)”을 발견해서 개개의 공준을 그 모형에 관한 옳은 진술로 바꾸는 것이었다. 유클리드 기하학의 경우에는 앞서 언급한 바와 같이 그 모형이 일상적 공간이었다. 이 방법은 수학의 다른 분야에서도 모형을 찾는데 사용되었고, 그 모형의 원소들은 그 분야의 추상적 공준들의 정합성을 결정하는데 버팀목 역할을 하였다. 이 절차는 대략 다음과 같이 진행된다. 먼저 제각기 식별될 수 있는 “원소”들의 집단을 “집합”이라 하고, 그 집단의 구성원 하나하나는 그 집합의 “원소”라고 부르기로 하자.</p>
+            <p>(...)</p>
+            <p>정합성 문제를 해결하려는 이러한 시도에는 해결을 어렵게 만드는 한 가지 원인이 있었다. 그 원인은 <mark>공준들이 무수히 많은 원소로 구성된 모형에 의해서 해석되어야 한다는 사실이었다.</mark> 이로 인해서 인간의 한정된 관찰에 의해서는 그 모형 전체를 모조리 확인할 수 없게 되고, 따라서 공리들 자체의 진리성은 의심을 받게 된다. 유클리드 기하학의 진리성을 입증하기 위한 귀납 논증에서 공간에 관한 한정된 관찰 결과는 유클리드 기하학의 공리들과 일치할 것이다. 그러나 그 귀납 논증이 확립하려고 하는 결론은 유한한 자료를 무한한 자료로 확장하는 일을 반드시 필요로 한다. 누가 어떻게 이 비약을 정당화할 수 있단 말인가? 이와 반대로 만약 유한개의 원소만 포함하는 적절한 모형이 고안될 수 있다면 어려움이 완전히 일소되지는 않더라도 최소화될 수는 있다.</p>
+            <p>그런데 불행히도 수학의 중요한 분야의 토대를 형성하는 대부분의 공준 체계는 유한개의 원소를 가진 모형에 반영될 수 없다. 이런 공준 체계들은 무한개의 원소를 가진 모형에 의해서만 만족스럽게 해석될 수 있다. (가령 자연수, 정수 등의 수체계는 무한하다)<a class="footnote" href="#fn-hofstadter-same-reason-hilbert">9</a></p>
+            <p>(...)</p>
+            <p>지금까지 우리는 정합성 문제가 수학에서 중요한 이유를 살펴보았고, 모형을 이용해서 정합성 문제를 해결하려는 전통적 표준 방법을 알게 되었다. 또한 정합성 문제를 해결하려고 시도했던 대부분의 경우에 정합성 문제 해결을 위해서는 반드시 무한개의 원소를 가진 모형을 사용해야 한다는 것과 그 모형을 기술하는 진술들 속에 부정합성이 숨어 있을 수 있다는 것도 알게 되었다. 따라서 우리는 모형 방법이 매우 귀중한 수학적 도구임에도 불구하고 그 방법이 해결하려고 했던 정합성 문제에 대한 최종 해답을 제공하지 못하는 방법이라고 결론내린다. </p>
+            <p>수학과 상위수학을 엄격히 구분하는 것은 중요하다.</p>
+
+            <p style="text-align:right; font-style:italic;">2025.11.26</p>
+
+            <div class="footnotes">
+            <hr>
+                <ol>
+                    <li id="fn-hofstadter-syntax-semantics"><p>수학은 자연스럽게 하나의? 몇몇? semantic domain 위에서 이해되어 왔으나, 형식화가 진행되면서 수학적 추리가 '의미'와 관계가 없다는 사실을 받아들여야 했다는 것 </p></li>
+                    <li id="fn-hofstadter-semantic-domain"><p>형식화 이후의 수학은 더 syntax적이고, 의미와 무관하다. 그런데 여기서 수학의 진술이 '모든 대상'에 관한 진술로 확장되었다고 말하고 있는 것은: 형식화는 "점이 뭐냐" "선이 뭐냐"와 같은 고정된 의미를 제거하며, 의미 선택을 syntax에 맡긴다 - semantic domain의 확장</p></li>
+                    <li id="fn-hofstadter-model"><p>위에서 말한 semantic domain의 확장 - 상식적인 해석, 직관적으로 떠올릴 수 있는 관습적인 의미가 없는 구조도 모델로 쓰기에 문제 없다는 것. </p></li>
+                    <li id="fn-hofstadter-semantic-domain"><p>semantic domain이 선택적이라는 것은, 부가적이고 비본질적인 것이라는 것이기도 하다. syntax는 모델 선택에 의존하지 않는 판단의 기반이 된다. "모든 모델에서 참(semantic)인 문장은 공리로부터 증명 가능(syntactic)하다"는 완전성 정리는 semantic truth가 syntax에 의해 완전히 포착 가능하다는 사실을 보장한다. 물론 이는 1차 논리에 대해 성립하는 것이고 구체적인 수학 이론에서 참/거짓을 논하는 단계로 넘어가면 완전성은 보장되지 않는다. (괴델의 불완전성 정리)</p></li>
+                    <li id="fn-hofstadter-only-syntax"><p>의미(semantics)에 기대지 않고 기호와 공리적 구조(syntax)만으로 수학을 정의할 수 있는 영역</p></li>
+                    <li id="fn-hofstadter-semantic-interpretation"><p>전통적인 semantic interpretation이 있을 때에는 정합성이 검증해야 하는 것이라는 생각도 안 했는데, semantic truth라는 보호막이 사라지니까 정합성 검증이라는 새로운 문제의식이 생긴 것. </p></li>
+                    <li id="fn-hofstadter-no-contradiction"><p>정합성은 "어떤 모순도 결코 나오지 않는다"는 claim인데, 지금까지의 유도 과정에서 모순이 없다는 것은 그 claim의 유한한 근거일 뿐, 미래에도 결코 모순이 나오지 않을 거라는 걸 보장해주지 않는다. </p></li>
+                    <li id="fn-hofstadter-semantic-consistency-proof"><p>정합성을 보장하던 방식 - semantic consistency proof : 공리에 맞는 모델을 찾아서, 그 모델에서 공준들이 모두 참임을 확인하면, 공준 체계는 정합적이다. 
+
+위의 경우 실제 공간을 모델로 사용할 수 없으므로, 공리에 맞는 새 모델을 만들어야 한다.</p></li>
+                    <li id="fn-hofstadter-same-reason-hilbert"><p>비슷한 이유로 힐베르트: semantic consistency proof를 거부함. 무한 모델에 의존한 proof는 수학적으로 검증 불가하고, 그럼 유한 모델만 있으면 좋겠는데 그런 이론은 거의 없고, semantic truth에 의존하기 때문에.
+
+ Hilbert program은 syntactic consistency proof 계획했다: 정합성을 syntactic한 방식으로 증명하려는 시도. 다시 말해 모든 수학적 진리가 유한한 공리들로부터 유한한 수의 논리적 단계를 거쳐 도출될 수 있는지. 이는 괴델의 불완전성 정리에 의해 좌절됨.</p></li>
+                </ol>
+            </div>
+
+        
+        <p style="text-align:center">* * *</p>
+
+        <h2>[번역] Paul Feyerabend, "<a href="https://www.radicalphilosophy.com/article/how-to-defend-society-against-science" target="_blank" rel="noopener noreferrer">How to defend society against science</a>"</h2>
+
+
+        <h3>신화(또는 동화)</h3>
+
+        <p>나는 사회와 그 구성원들을 모든 이념으로부터 지켜내고 싶다. 이 때 모든 이념은 ‘과학’을 포함한다. 모든 이념은 각각 하나의 관점이라고 바라보아야 하며, 지나치게 진지하게 받아들여서는 안 된다. 모든 이념은 흥미로운 이야기들을 많이 담고 있지만 거짓말도 포함된 동화처럼 읽혀야 한다. 혹은 유용한 (경험)규칙이 될 수 있지만 문자 그대로 따를 경우 치명적인 윤리적 규범처럼 읽혀야 한다.</p>
+
+        <p>자, 이것은 이상하고 우스꽝스러운 태도인가? 분명히 과학은 항상 권위주의와 미신에 맞선 투쟁의 최전선에 서 있었다. 종교적 신념에 대한 우리의 지적 자유가 확대된 것은 과학 덕분이며, 인류가 고대적이고 경직된 사고 형태로부터 해방된 것도 과학 덕분이다. 오늘날 이러한 사고 형태들이 꿈 (또는 악몽)에 불과하다는 것을 우리는 과학으로부터 배웠다. 과학과 계몽은 동일한 것이다.</p>
+
+        <p>가장 급진적인 사회비평가들조차 이를 믿는다. 크로포트킨은 과학을 제외한 모든 전통적 제도와 신념 체계를 전복하려 한다. 입센은 19세기 부르주아 이데올로기의 가장 은밀한 파생물까지 비판하지만, 과학은 건드리지 않는다. 레비-스트로스는 이데올로기의 상대화를 통해 서양 사상이 인류 성취의 고립된 정점이 아니라는 점을 깨닫게 해주었지만, 그 역시 과학을 논의에서 제외한다. 마르크스와 엥겔스는 과학이 노동자들의 정신적·사회적 해방을 위한 투쟁에 도움이 될 것이라고 확신했다. 이 모든 사람들이 속은 것인가? 그들은 과학의 역할에 대해 모두 오해한 것인가? 그들은 모두 키메라의 희생자인가?</p>
+
+        <p>이러한 질문들에 대해 나는 ‘그렇다’고, 또 ‘그렇지 않다’고 단호하게 대답할 것이다.</p>
+
+        <p>이제 그 이유를 설명하겠다. 내 설명은 두 부분으로 이루어져 있다. 하나는 일반적인 설명이고, 다른 하나는 보다 구체적인 설명이다.</p>
+
+        <p>일반적인 설명은 간단하다. 사상 체계가 인간의 마음에 미치는 포괄적인 지배력을 깨뜨리는 모든 이념은 인간의 해방에 기여한다. 인간으로 하여금 계승된 신념을 의심하게 만드는 모든 이념은 깨달음에 도움이 된다. 견제와 균형 없이 군림하는 진실은 타도해야 할 폭군이며, 어떤 거짓이든 이 폭군을 타도하는 데 도움을 주는 것은 환영받을 일이다. 이러한 맥락에서 17세기와 18세기의 과학은 실제로 해방과 계몽의 도구였다. </p>
+
+        <p>그러나 과학이 반드시 그러한 도구로 남아야 한다는 것은 아니다. 과학이나 그 어떤 이념에도 본질적으로 해방적이라고 할 수 있는 속성은 없다. 이념은 퇴화하여 어리석은 종교가 될 수 있다. 마르크스주의를 보라. 그리고 오늘날의 과학이 1650년의 과학과 매우 다르다는 것은 (아주 피상적으로만 관찰하더라도) 명백하다.</p>
+
+        <p>예를 들어, 현재 교육에서 과학이 차지하는 역할을 살펴보자. 과학적 ‘사실’들은 아주 어린 나이에 교육되며, 불과 한 세기 전 종교적 ‘사실’들이 가르쳐졌던 것과 동일한 방식으로 전수된다. 학생이 사물을 관점 속에서 바라볼 수 있도록 비판적 사고 능력을 깨우려는 시도는 전혀 없다. 대학에서는 상황이 더욱 심각하다. 왜냐하면 여기서는 세뇌가 훨씬 더 체계적인 방식으로 이루어지기 때문이다. 비판이 전혀 없는 것은 아니다. 예를 들어 사회와 사회 제도는 초등학교 수준에서조차 가장 가혹하고 종종 불공정하게 비판받는다. 그러나 과학은 비판에서 예외로 여겨진다.</p>
+
+        <p>사회 전반에서 과학자의 판단은 경외심의 대상이 된다. 불과 얼마 전까지 주교와 추기경의 판단이 받아들여졌던 것과 같은 방식으로 말이다. 예를 들어, ‘탈신화화’의 움직임은 주로 기독교와 과학적 사상의 충돌을 피하려는 의도에서 출발한다. 만약 그러한 충돌이 발생한다면, 과학은 분명히 옳고 기독교는 틀린 것이다. 이 조사를 더 깊이 진행해 보면, 과학이 이제 한때 맞서 싸워야 했던 이념들만큼이나 억압적이 되었음을 알 수 있다. 오늘날 과학적 이단에 가담한다고 해서 거의 아무도 죽임을 당하지 않는다는 사실에 속아서는 안 된다. 이는 과학과 무관한 일이다. 이는 우리 문명의 전반적인 질과 관련이 있다. 과학계의 이단자들은 여전히 제재를 받으며 고통받는다. 비교적 관대한 문명이 제공할 수 있는 한 가장 가혹한 제재를 말이다.</p>
+
+        <p>그러나 - 이 묘사가 완전히 불공평하지 않은가? 나는 편향적이고 왜곡된 용어를 사용함으로써 사안을 매우 왜곡된 시각으로 제시하지 않았는가? 우리는 상황을 완전히 다른 방식으로 묘사해야 하지 않을까? 나는 과학이 경직되었으며, 변화와 해방의 도구가 아니게 되었다고 말했지만, 과학이 진리, 혹은 그 상당 부분을 발견했다는 점은 덧붙이지 않았다. 이 추가 사실을 고려하면, 이런 반론을 제시할 수 있을 것이다. 과학의 경직성은 인간의 고집 때문이 아니라 사물의 본성에 기인한다는 것이다. 일단 진리를 발견한 이상, 그것을 따르는 것 외에 다른 선택이 어디 있겠는가?</p>
+
+        <p>이 진부한 답변은 전혀 독창적이지 않다. 이데올로기가 추종자들의 신념을 강화하려 할 때마다 동원된다. ‘진리’란 참 잘 만든 중립적인 단어다. 진실을 말하는 것이 칭찬받을 일이고 거짓말이 악하다는 점을 부인하는 사람은 없다. 그 누구도 부인하지 않으면서도, 그런 태도가 무엇을 의미하는지 아는 사람은 아무도 없다. 그래서 사물을 왜곡하고 진실을 바꾸는 일이 쉬워진다.</p>
+
+        <p>일상적 사안에서의 진리에 대한 충성을 이념의 진리에 대한 충성으로 변질시키는 것, 이는 그 이념을 독단적으로 방어하는 것에 지나지 않는다. 물론 우리가 진리를 따라야 한다는 것 역시 사실이 아니다. 인간 삶은 여러 아이디어들에 의해 이끌린다. 진리도 그중 하나다. 자유와 정신적 독립성도 있을 것이다. 일부 이념 옹호자(ideologist)들이 구상한 진리가 자유와 충돌한다면 우리는 선택의 기로에 선다. 자유를 포기할 수도 있다. 그러나 진리를 포기할 수도 있다. (또는 자유와 더 이상 모순되지 않는 진리에 대한 정교한 개념을 채택할 수도 있다; 그것이 헤겔의 해결책이었다.) 현대 과학에 대한 나의 비판은 그것이 사상의 자유를 억압한다는 점이다. 그 이유가 진리를 발견했기에 이제 그것을 따르기 때문이라면, 나는 그 진리보다, 그리고 그런 괴물을 따르는 것보다 더 나은 선택지가 있다고 말할 것이다.</p>
+
+        <p>이것으로 내 설명의 일반적인 부분은 마친다.</p>
+
+        <p>오늘날 사회에서 과학이 차지하는 예외적인 지위를 옹호하는 더 구체적인 논증이 존재한다. 간단히 말해 이 논증은 (1) 과학이 마침내 결과를 달성하는 올바른 방법을 찾았으며 (2) 그 방법의 우수성을 증명하는 수많은 결과가 존재한다고 주장한다. 이 논증은 잘못되었지만, 이를 증명하려는 대부분의 시도는 막다른 골목으로 이어진다.</p>
+
+        <p><mark>방법론은 이제 세련된 빈 단어들로 가득 차서 근본적인 단순한 오류들을 알아차리기 매우 어렵다. 이는 히드라와 싸우는 것과 같습니다—추한 머리 하나를 베어내면 여덟 개의 또 다른 형식화 방식이 나타난다.</mark></p>
+
+        <p>이런 상황에서 유일한 해답은 피상성(superficiality)에 있다. 방법론이 내용 없이 비어버렸을 때 현실과 접촉을 유지하는 유일한 방법은 조잡하고 피상적인 상태로 남는 것이다. 바로 이것이 내가 지향하는 바이다.</p>
+
+        <h3>방법에 반대한다</h3>
+
+        <p>논증의 (1) 부분에 따르면 방법(method)이라는 것이 존재한다. 그것은 무엇인가? 어떻게 작동하는가?</p>
+
+        <p>과거만큼 더 이상 대중적이지 않은 한 가지 답변은 과학이 사실을 수집하고 그로부터 이론을 추론함으로써 작동한다는 것이다. 이 답변은 불만족스러운데, 논리적으로 엄밀하게 말하자면 이론이 사실로부터 도출된 적이 없기 때문이다. 이론이 사실에 의해 지지될 수 있다고 말하는 것은 (a) 결함을 보이지 않으면서 (b) 사실에 의해 어느 정도 지지되는지 말할 수 있을 만큼 충분히 정교하다는 것을 전제한다. 이를테면, 상대성 이론은 사실에 의해 지지된다고 말할 수 있다. 오늘날 그러한 개념은 존재하지 않으며, 앞으로도 발견될 가능성은 희박하다(문제 중 하나는 회색 까마귀가 '모든 까마귀는 검다'를 지지한다고 말할 수 있는 개념이 필요하다는 점이다). 이는 관습론자와 초월적 관념론자들이 깨달은 것으로, 그들은 이론이 사실을 형성하고 질서화하므로 무슨 일이 있어도 유지될 수 있다고 지적했다. 이론은 인간의 마음이 의식적으로든 무의식적으로든 질서를 부여했기 때문에 유지될 수 있다. 이러한 관점의 문제는 그들이 세계에 대해 설명하고자 하는 것을 마음에 대해 가정한다는 점이다. 마음은 정규적인 [그래서 세계와 다른] 규칙에 따라 작동하는데 말이다. 이 모든 난관을 극복하는 관점은 오직 하나뿐이다. 이는 19세기에 밀이 그의 불멸의 논문 『자유론』에서, 그리고 다윈주의를 사상 전쟁으로 확장한 일부 다윈주의자들에 의해 두 차례에 걸쳐 창안되었다. 이 관점은 문제를 정면으로 맞선다:</p>
+
+        <p>이론은 다른 이론과의 비교 없이 정당화될 수 없고 그 우수성이 입증될 수도 없다. 우리는 더 포괄적인 이론을 참조하여 어떤 이론의 성공을 설명할 수 있다(일반 상대성 이론을 사용해 뉴턴 이론의 성공을 설명할 수 있음). 또한 다른 이론들과 비교함으로써 우리가 그 이론을 선호하는 이유를 설명할 수 있다. 이러한 비교는 우리가 선택한 이론의 본질적 우수성을 입증하지는 않는다.</p>
+
+        <p>사실 우리가 선택한 이론은 상당히 형편없을 수도 있다. 모순을 포함할 수도 있고, 잘 알려진 사실과 충돌할 수도 있으며, 복잡하고 불명확하며 결정적인 부분에서 임시변통적일 수도 있다. 그러나 그것은 당시 이용 가능한 다른 어떤 이론보다 나을 수도 있다. 물론 가장 형편없는 이론일 수도 있다. 판단 기준 역시 절대적인 방식으로 선택되지 않는다. 우리가 선택을 할 때마다 우리의 교양은 깊어지고, 기준도 함께 높아진다. 기준들은 이론들이 경쟁하듯 서로 경쟁하며, 우리는 선택이 이루어지는 역사적 상황에 가장 적합한 기준을 선택한다. 배제된 대안들(이론들, 기준들, ‘사실들’)은 사라지지 않는다. 그것들은 교정 장치 역할을 한다(나중에 봤을 때, 우리가 잘못된 선택을 했을 수도 있으니까). 또한 더 선호되는 관점의 내용을 설명해준다(상대성 이론을 이해하려면 경쟁 이론들의 구조를 이해해야 더 잘 이해할 수 있다; 전체주의 국가에서의 삶, 그 장점들(장점도 많다)과 단점들을 모두 알고 있을 때만 우리는 자유의 완전한 의미를 알 수 있다). 이렇게 이해된 지식은 기준의 바다에 의해 분류되고 세분화된 대안들의 바다이다. 이는 우리의 정신이 가공의 선택들을 하도록 강요함으로써 성장하게 한다. 이는 우리의 정신이 선택하고, 상상하고, 비판할 수 있게 만든다.</p>
+
+        <p>오늘날 이 견해는 종종 칼 포퍼의 이름과 연결된다. 그러나 포퍼와 밀 사이에는 매우 결정적인 차이점이 존재한다. 우선 포퍼는 인식론의 특수한 문제, 즉 ‘흄의 문제’를 해결하기 위해 자신의 견해를 발전시켰다. 반면 밀은 인간이 성장하는 데에 유리한 조건에 대해 관심을 가졌다. 그의 인식론은 특정 인간론의 결과물이지 그 반대는 아니다. 또한 비엔나 학파의 영향을 받은 포퍼는 논의를 시작하기 전에 이론의 논리적 형태를 개선하는 반면, 밀은 과학에서 나타나는 그대로의 형태로 모든 이론을 활용한다. 셋째, 포퍼의 비교 기준은 엄격하고 고정된 반면, 밀의 기준은 역사적 상황에 따라 변화할 수 있도록 허용된다. 마지막으로, 포퍼의 기준은 경쟁 이론을 단번에 배제한다: 반증 불가능하거나 반증 가능하면서 반증된 이론은 과학에서 자리를 잃는다. 포퍼의 기준은 명확하고 모호함이 없으며 정확히 정립된 반면, 밀의 기준은 그렇지 않다. 과학 자체가 명확하고 모호함이 없으며 정확하게 공식화된다면 이것은 장점일 수도 있지만, 불행히도 과학은 그렇지 않다.</p>
+
+        <p>우선, 새롭고 혁명적인 과학 이론은 결코 어떤 상황에서 그 이론이 위태로워졌다고 간주해야 하는지 말할 수 있는 방식으로 정립되지 않는다: 많은 혁명적 이론들은 반증 불가능하다. 반증 가능한 버전들도 존재하지만, 그것들은 인정된 기본 진술들과 합의를 거의 이루지 못한다: 어느 정도 흥미로운 이론은 모두 반증된다. 게다가 이론들은 형식적 결함을 지니며, 그중 다수는 모순과 임시변통적 조정 등을 포함한다. 포퍼의 기준을 철저히 적용한다면 과학을 대체할 만한 어떤 것도 없이 과학 자체를 제거해 버릴 것이다. 이는 과학에 도움이 되지 않는다.</p>
+
+        <p>지난 10년간 쿤과 러커토시를 비롯한 여러 사상가들이 이 사실을 깨달았다. 쿤의 사상은 흥미롭지만, 아쉽게도 너무 모호해서 도움이 될 만한 결론을 만들어내지 못한다. 이 말이 믿기지 않는다면 관련 문헌을 살펴보라. 과학철학 문헌이 이토록 많은 괴짜들과 무능력자들에 의해 침범당한 적은 없었다. 쿤은 돌이 땅으로 떨어지는 이유조차 모르는 사람들이 과학적 방법론에 대해 확신에 찬 어조로 논하기를 조장한다. 나는 무능 자체에는 반대하지 않으나, 그 무능이 지루함(boredom)과 독선(self-righteousness)과 동반될 때는 반대한다. 이것이 바로 지금 일어나고 있는 일이다. 우리는 흥미로운 거짓 아이디어를 얻지 못하고 있으며, 오히려 지루한 아이디어나 아이디어와 전혀 연결되지 못한 단어들의 집합을 얻는다. 둘째, 쿤의 아이디어를 더 명확히 하려는 시도는 결국 그 아이디어가 거짓임을 드러냄으로써 끝난다. 사상사에서 정상과학의 시기가 존재했는가? 없다. 누구라도 반증해보라.</p>
+
+        <p>러커토시는 쿤보다 훨씬 정교하다. 그는 이론 대신 수정 방법, 이른바 휴리스틱으로 연결된 이론들의 연속체인 연구 프로그램을 고려한다. 연속체 속 각 이론은 결함으로 가득할 수 있다. 이상 현상, 모순, 모호성에 시달릴 수도 있다. 중요한 것은 개별 이론의 형태가 아니라 연속체가 보여주는 경향성이다. 우리는 특정 시점의 상황이 아니라 일정 기간에 걸친 역사적 발전과 성과를 평가한다. 역사학과 방법론이 하나의 연구로 통합된다. 이론의 연속체가 새로운 예측으로 이어질 때 연구 프로그램은 진보한다고 본다. 그 프로그램의 도움 없이 발견된 사실들을 흡수하는 수준으로 퇴화할 때 그 프로그램은 퇴보한다고 본다. 러커토시의 방법론에서 결정적인 특징은 이러한 평가가 더 이상 과학자에게 연구 프로그램을 유지하거나 포기하라고 지시하는 방법론적 규칙에 얽매이지 않는다는 점이다. 과학자들은 퇴화하는 프로그램을 고수할 수 있으며, 심지어 그 프로그램이 경쟁자들을 추월하는 데 성공할 수도 있다. 따라서 그들은 자신이 하는 일을 합리적으로 진행한다 (퇴화하는 프로그램을 퇴화하는 것으로, 진보적인 프로그램을 진보적인 것으로 계속 부른다는 전제 하에). 이것은 러커토시가 '방법론의 요소처럼 들리는 말들'을 제공한다는 것을 의미한다; 그는 '방법론'을 제시하지 않는다. 오늘날 존재하는 가장 진보되고 정교한 (과학에 대한) 방법론에 따르면, 방법은 없다.</p>
+
+        <p>이것으로 특정 논증의 (1)번 부분에 대한 나의 답변을 마친다.</p>
+
+        <h3>성과에 반대한다</h3>
+
+        <p>(2)번 부분에 따르면, 과학은 성과를 창출해냈기 때문에 특별한 지위를 누릴 자격이 있다. 이는 과학을 제외한 모든 것들이 성과를 창출한 적이 없다고 말할 수 있을 때만 성립하는 주장이다. 이 문제를 논의하는 거의 모든 사람이 그러한 가정을 한다고 말할 수 있을 것이다. 또한 그 가정이 틀렸음을 입증하기가 쉽지 않다는 점도 인정할 수 있을 것이다. 과학과 다른 형태를 가진 것들은 사라지거나 퇴화하여 공정한 비교가 불가능한 지경에 이르렀다. 그럼에도 상황은 불과 10년 전만큼 절망적이지는 않다. 우리는 효과적인 (서양 의학의 해당 분야보다 더 효과적일 수도 있는) 의학적 진단 및 치료법을 알게 되었는데, 이는 서양 과학의 이념과는 근본적으로 다른 이념에 기반을 두고 있다. 우리는 텔레파시나 염력 같은 현상들이 과학적 접근에 의해 지워져버렸으며, 이것들을 완전히 새로운 방식으로 연구에 활용될 수 있음을 알게 되었다. (Nettesheim의 Agrippa, John Dee, 심지어 베이컨 같은 선행 사상가들도 이러한 현상들을 인지하고 있었다). 그리고 또 하나 - 교회는 영혼을 구원해왔지만 과학은 종종 정반대의 일을 해오지 않았는가? 물론, 이 판단의 기반이 되는 존재론을 지금 믿는 사람은 아무도 없다. 왜일까? 이념적 압박 때문이다. 오늘날 우리가 다른 모든 것을 배제하고 과학의 말만 듣게 만드는 것과 동일한 이념적 압박이다. 또한 염력이나 침술 같은 현상들이 결국 과학의 영역에 흡수되어 ‘과학적’이라 불릴 수도 있다는 점도 사실이다.</p>
+
+        <p>그러나 이는 오직 오랜 저항 기간을 거친 후에야 발생한다는 점을 유의하라. 그 기간 동안 해당 현상을 (아직) 설명해내지 못하는 과학은, 해당 현상을 포함하는 삶의 형태를 억압하려 한다. 이는 특정 논증의 (2)번 부분에 대한 추가 반론으로 이어진다.</p>
+
+        <p>과학이 성과를 낸다는 사실은 오직 그 성과가 과학 단독으로, 외부 도움 없이 달성되었을 때만 과학에 유리하게 작용한다. 하지만 실제 역사에서는 거의 그런 적이 없다. 코페르니쿠스가 새로운 우주관을 제시했을 때, 그는 과학적 선배들을 참고하지 않고 Philolaos 같은 미친 피타고라스 학파의 말을 참고했다. 그는 그의 아이디어를 채택했고, 모든 건전한 과학적 방법론의 규칙을 무시한 채 이를 고수했다. 역학과 광학은 장인들에게, 의학은 산파와 마녀들에게 많은 빚을 지고 있다. 그리고 우리 시대에 우리는 국가의 개입이 과학을 어떻게 진전시킬 수 있는지 목격했다: 중국 공산당이 전문가들의 판단에 겁먹지 않고 전통 의학을 다시 복원하라고 명령했을 때 대학과 병원에 과학자들이 유입되자 전세계적으로 중국의 과학이 이제 퇴보할 것이라는 비난이 쏟아졌다. 그러나 정반대의 결과가 나타났다: 중국의 과학은 진전을 만들었고 서양의 과학은 그로부터 배웠다. 과학이 위대한 진보를 하는 것은 가장 기본적이고 가장 '합리적'인 방법론적 규칙들을 따라서가 아니라, 외부에서 들어온 간섭의 영향을 더 많이 받는다. 교훈은 분명하다: 오늘날 과학이 사회에서 차지하는 예외적인 역할을 지지할 수 있는 단 하나의 논증도 존재하지 않는다. 과학은 많은 일들을 해냈지만, 다른 이념들도 마찬가지다.</p>
+
+        <p>과학은 종종 체계적으로 진행되지만, 다른 이념들도 그러하다(교회에서 벌어진 수많은 교리 논쟁 기록을 살펴보라). 게다가 어떤 상황에서도 준수되는 절대적인 규칙은 존재하지 않는다; 과학을 다른 것들과 구분할 수 있는 ‘과학적 방법론’은 존재하지 않는다. 과학은 사회를 추진하는 수많은 이념 중 하나일 뿐이며, 그에 따라 대우받아야 한다(이 진술은 과학의 가장 진보적이고 변증법적인 분야에도 적용된다). 이 결과로부터 우리는 어떤 결론을 도출할 수 있을까?</p>
+
+        <p>가장 중요한 결과는 현재 국가와 교회 사이가 공식적으로 분리되어 있는 것처럼 국가와 과학 사이에도 분리가 반드시 이루어져야 한다는 점이다. 과학은 사회에 영향을 미칠 수 있으나,  그 영향력은 정치적 또는 기타 압력 단체가 사회에 영향을 미칠 수 있는 범위 내에서만 허용된다. 중요한 프로젝트에 대해 과학자들의 자문을 구할 수는 있으나, 최종 판단은 민주적으로 선출된 자문 기구에 맡겨야 한다. 이러한 기구는 주로 비전문가들로 구성될 것이다. 비전문가들이 올바른 판단을 내릴 수 있을까? 분명히 가능하다. 과학의 역량과 복잡성, 성과는 지나치게 과장되어 있기 때문이다. 변호사가 최첨단 전문가의 기술적 증언에서 결함을 찾아내는 모습을 지켜보는 것은 아주 짜릿한 경험이다. 과학은 수년간의 훈련을 거쳐야만 이해할 수 있는 닫힌 책이 아니다. 관심 있는 누구라도 검토하고 비판할 수 있는 지적 훈련이며, 단지 많은 과학자들(다행히도 모든 과학자들은 아니다)이 체계적으로 벌인 난독화(obfuscation) 캠페인 때문에 어렵고 심오해 보일 뿐이다. 국가 기관은 과학자들의 판단을 거부할 이유가 있을 때 이를 결코 주저해서는 안 된다. 이러한 거부는 일반 대중을 교육시키고, 대중의 자신감을 높이며, 심지어 개선으로 이어질 수도 있다. 과학계의 상당한 배타주의를 고려할 때 우리는 이렇게 말할 수 있다: 리센코 사건(Lysenko affair)이 많을수록 좋다 (리센코 사건에서 문제시되는 것은 단순히 국가의 간섭이나 조언을 무시하는 것이 아니라 반대자를 죽이는 전체주의적 간섭이다). 진화론에 대한 독단적 정립을 교과서에서 삭제하고 창세기에 대한 설명을 포함시키는 데 성공한 캘리포니아의 근본주의자들에게 삼창을 보낸다(하지만 그들이 과학자들만큼이나 독단적이고 전체주의적이 될 것임을 나는 안다. 오늘날 이념들은 오직 자신들만의 손으로 사회를 운영할 기회를 얻었을 때 그 본색을 드러낸다. 이념들은 다른 이념들과 함께 공존할 때 비로소 빛을 발한다. 그러나 그 장점이 경쟁자들을 제거하는 데 이용되는 순간, 이념들은 지루하고 교조적으로 변해버린다.) 그러나 가장 중요한 변화는 교육 분야에서 일어나야 할 것이다.</p>
+
+        <h3>교육과 신화</h3>
+
+        <p>교육의 목적은 젊은이들을 삶에, 즉 그들이 태어난 사회와 그 사회를 둘러싼 물리적 우주에 소개하는 것이라고 생각할 수 있다. 교육의 방법은 종종 어떤 간단한 신화를 가르치는 것처럼 이루어진다. 이 신화는 다양한 버전으로 존재한다. 더 발전된 버전은 의식(initiation rites)을 통해 가르쳐지며, 이를 통해 신화가 마음속에 확고히 자리 잡게 된다. 신화를 아는 성인은 거의 모든 것을 설명할 수 있다(아니면 더 자세한 정보를 위해 전문가에게 의지할 수 있다). 그는 자연과 사회의 주인이다. 둘 다 이해하며 그들과 상호작용하는 법을 안다. 그러나 자기자신의 이해를 직접 이끄는 신화의 주인은 아니다.</p>
+
+        <p>이러한 더 깊은 통찰력은 소크라테스 이전 철학자들이 목표로 삼았고 부분적으로 달성한 것이었다. 소크라테스 이전 철학자들은 단순히 세계를 이해하려 한 것이 아니었다. 그들은 세계를 이해하는 행위 그 자체의 의미를 이해하고, 나아가 그 의미를 지배하고자 했다. 단 하나의 신화에 만족하지 않고 수많은 신화를 발전시킴으로써, 그들은 잘 짜인 이야기가 인간의 마음에 미치는 힘을 약화시켰다. 소피스트들은 흥미롭고, 일관되며, ‘경험적으로 타당하고’, 그렇고 그러한 이야기들이 너무 매혹적이인 나머지 사람들이 이야기를 받아들이는 능력을 쇠약하게 만든다고 생각했고, 그 효과를 줄이기 위한 방법을 도입했다. 이 사상가들의 업적은 당대에도 제대로 평가받지 못했으며 오늘날에도 분명히 이해되지 않고 있다. 우리가 신화를 가르칠 때, 우리는 그 신화가 이해될 가능성(즉, 신화의 어떤 특징에 대해서도 의문이 생기지 않도록), 믿어질 가능성, 그리고 받아들여질 가능성을 높이고자 한다. 신화가 다른 신화들로 균형을 이룰 때는 이것이 아무런 해를 끼치지 않는다: 특정 기독교 판본의 가장 헌신적인(즉 전체주의적인) 교사조차도 제자들이 불교도, 유대인 및 기타 평판이 좋지 않은 사람들과 접촉하는 것을 막을 수 없다. 과학이나 합리주의의 경우엔 상황이 매우 다르다. 이 분야는 거의 완전히 신봉자들에 의해 지배되고 있기 때문이다. 이 경우 젊은이들의 정신을 강화하는 것이 가장 중요하며, '젊은이들의 정신 강화'란 포괄적인 관점을 쉽게 받아들이지 않도록 그들을 단련하는 것을 의미한다. 여기서 필요한 것은 사람들이 어떤 단일 관점의 정교화에 몰두할 능력을 상실하지 않으면서도 반대의 제안을 할 수 있는 태도를 갖도록 만드는 교육이다. 이 목표는 어떻게 달성될 수 있을까?</p>
+
+        <p>이는 아이들이 지닌 엄청난 상상력을 보호하고 그들 안에 존재하는 모순의 정신을 최대한 발전시킴으로써 달성될 수 있다. 대체로 아이들은 교사들보다 훨씬 더 지능적이다. 괴롭힘을 당하거나 감정적 수단으로 제압되어 아이들은 굴복하고 지성을 포기하는 것이다. 아이들은 두세 가지 다른 언어를 배우고 이해하며 구분할 수 있다('아이들'이란 여기서 3~5세 유아를 의미하며, 최근 실험 대상이 되어 좋지 않은 결과를 보인 8세 아동이 아니다. 왜냐하면 그들은 이미 어린 시절 무능한 교육으로 망가져 있었기 때문이다). 물론 언어는 일반적으로 행해지는 방식보다 더 흥미롭게 소개되어야 한다. 모든 언어에는 놀라운 이야기를 전한 훌륭한 작가들이 있다. ‘개는 꼬리가 있다’ 같은 무의미한 문장이 아니라 그들과 함께 언어 교육을 시작해야 한다. 이야기를 통해 우리는 물론 ‘과학적’ 설명, 예를 들어 세계의 기원에 관한 설명도 소개할 수 있으며, 이를 통해 아이들에게 과학도 함께 알려줄 수 있다. 하지만 과학은 많은 사람들이 믿는다는 점을 지적하는 것 외에는 특별한 위치를 부여받아서는 안 된다. 나중에 들려준 이야기들은 '이유'로 보충될 것이며, 여기서 이유란 그 이야기가 속한 전통에서 발견되는 추가 설명을 의미한다. 물론 그 이야기를 반대할 수 있는 이유들도 있을 것이다. 해당 분야의 전문가들이 찬성과 반대의 이유를 모두 설명해 줄 것이므로 젊은 세대는 온갖 설교와 온갖 유형의 방랑자들을 접하게 될 것이다. 그들을 접하고 그들의 이야기를 접하게 되며, 각 개인은 어느 길을 갈지 스스로 결정할 수 있게 된다. 이제는 누구나 과학자가 되면 많은 돈과 존경을 얻을 수 있으며, 어쩌면 노벨상까지 받을 수 있다는 사실을 알고 있다. 그래서 많은 이들이 과학자가 될 것이다. 그들은 과학의 이념에 사로잡히지 않은 채 과학자가 될 것이며, 자유로운 선택의 결과로 과학자가 될 것이다. </p>
+
+        <p>그들이 비과학적인 과목에 너무 많은 시간을 낭비한 것은 아니냐고 물을 수도 있다. 그들이 과학자가 되었을 때 이 점이 그들의 역량을 떨어뜨리지 않을까? 전혀 그렇지 않다! 과학의 진보, 진정한 과학의 진보는 새로운 아이디어와 지적 자유에 달려 있다: 과학은 종종 외부인들에 의해 발전해 왔다(보어와 아인슈타인이 스스로를 외부인으로 여겼음을 기억하라). 많은 사람들이 잘못된 선택을 하고 막다른 골목에 다다르지 않을까? 글쎄, 그것은 ‘막다른 골목’을 무엇으로 정의하느냐에 달려 있다. 오늘날 대부분의 과학자들은 아이디어가 없고 두려움에 사로잡혀, 하찮은 결과를 만들어내려 안간힘을 쓰며, 결국 수많은 무의미한 논문 홍수에 한 줄기 더 보태는 데 급급하다. 그런 것들이 지금 많은 분야에서 ‘과학적 진보’를 이루고 있다. 게다가, 무엇이 더 중한가? 눈을 뜨고 선택한 삶을 사는 것과, 그다지 똑똑하지 않은 사람들이 ‘막다른 길’이라 부르는 것을 피하려는 불안한 시도에 시간을 허비하는 것 중 어느 쪽이 더 중요한가? </p>
+
+        <p>과학자의 수가 줄어들어 결국 우리의 소중한 연구실을 운영할 사람이 없어지지 않을까? 나는 그렇게 생각하지 않는다. 선택권이 주어진다면 더 많은 사람들이 과학을 선택할 것이다. 왜냐하면 자유로운 주체들이 운영하는 과학은 오늘날의 과학보다 훨씬 매력적으로 보이기 때문이다. 오늘날의 과학은 노예들에 의해 운영된다. 기관의 노예이자 '이성'의 노예들에 의해 말이다. 과학자가 일시적으로 부족하다면 다양한 인센티브로 언제든 해결될 수 있다. 물론 내가 상상하는 사회에서 과학자들은 주도적 역할을 하지 않을 것이다. 마술사나 사제, 점성가들에 의해 그 영향력은 상쇄될 것이다. 이런 상황은 노소, 좌우를 막론하고 많은 사람들에게 견딜 수 없는 것이다. 여러분 대부분은 확고한 믿음을 가지고 있다. 적어도 어떤 형태의 진리는 발견되었으며, 반드시 제시되어야 하며, 제가 주장하는 교육 방식과 내가 옹호하는 사회 형태가 그 진리를 희석시켜 결국 사라지게 할 것이라고. 여러분은 이 확고한 믿음을 갖고 있으며, 많은 분들은 그럴 만한 근거도 있을 것이다. 그러나 고려해야 할 점은, 반대되는 타당한 근거가 부재한 것은 역사적 우연에 기인한 것이지 사물의 본성에 있는 것이 아니라는 사실이다. 내가 권하는 사회를 구축한다면, 지금 여러분이 경멸하는 견해들(물론 그 내용을 모른 채로 경멸하는 것이겠지만)이 화려하게 부활할 것이며, 여러분은 자신의 입장을 유지하기 위해 고군분투해야 할 것이고, 아마도 결국 전혀 유지할 수 없을 것이다. 믿지 못하겠는가? 그렇다면 역사를 들여다보자. (과학적) 천문학은 서양 사상사에서 가장 위대한 두 사상가인 프톨레마이오스와 아리스토텔레스에 확고히 기반을 두고 있었다. 그들의 논리 정연하고 경험적으로 타당하며 정밀하게 정립된 체계를 뒤엎은 이는 누구였을까? 미친 사람이라 불리며 대홍수 이전의 피타고라스 학파였던 필로라오스였다. 필로라오스가 어떻게 그런 반격을 펼칠 수 있었을까? 유능한 옹호자, 코페르니쿠스를 찾았기 때문이다. 물론, 내가 내 직감을 따르듯 당신도 당신의 직감을 따를 수 있다. 그러나 기억하라, 당신의 직감은 ‘과학적’ 훈련의 결과물이라는 점을. 여기서 과학이란 칼 마르크스의 과학도 포함한다. 나의 훈련, 혹은 오히려 비훈련은 기이하고 괴상한 사건들에 관심을 가진 기자의 것이다. </p>
+
+        <p>마지막으로, 수백만 명이 굶주리고, 다른 이들은 노예화되고, 짓밟히며, 육체와 정신이 비참한 고통 속에 있는 현 세계 정세에서 이런 사치스러운 생각을 하는 것이 완전히 무책임한 일이 아닐까? 선택의 자유가 이런 상황에서 사치가 아닐까? 내가 선택의 자유와 결합되길 바라는 경박함과 유머가 이런 상황에서 사치가 아닐까? 우리는 모든 자기 방종을 포기하고 함께 행동해야 하지 않을까? 이것이 오늘날 내가 권하는 접근 방식에 제기되는 가장 중요한 반대 의견이다. 그것은 엄청난 매력을 지니고 있으며, 이타적인 헌신의 매력을 지니고 있다. 이타적인 헌신—무엇을 위한 것인가? 한번 살펴보자!</p>
+
+        <p>우리는 이기적인 성향을 포기하고 억압받는 이들의 해방에 헌신해야 한다. 그렇다면 이기적인 성향이란 무엇인가? 그것은 우리가 현재 살고 있는 사회에서 사상적 자유를 최대한 누리고자 하는 바람이다. 추상적인 자유뿐만 아니라 적절한 제도와 교육 방법으로 구현된 최대의 자유를 말한다. 우리 주변에서 구체적인 지적·육체적 자유를 갈구하는 이 바람은 당분간 접어두어야 한다. 이는 첫째, 우리의 과업에 이 자유가 필요하지 않다는 전제를 깔고 있다. 어떤 대안에도 단호히 닫힌 마음으로 과업을 수행할 수 있다는 전제다. 타인을 해방시키는 올바른 방법이 이미 발견되었으며, 이제 남은 것은 그것을 실행하는 것뿐이라는 전제다. 유감스럽게도, 나는 이처럼 교조적인 자신감을 받아들일 수 없다. 이를 받아들이기에는 너무 중대한 문제이기 때문이다. </p>
+
+        <p>그렇다면 우리는 전혀 행동할 수 없다는 뜻인가? 그렇지 않다. 다만 행동하는 동안 내가 권고한 자유를 최대한 실현하려 노력해야 한다는 뜻이다. 그래야 자유를 확대해가는 과정에서 얻은 아이디어에 비추어 우리의 행동을 수정할 수 있기 때문이다. 이는 분명히 우리의 속도를 늦출 것이다. 하지만 누군가가 모든 비참함에 대한 설명과 훌륭한 탈출구를 찾았다고 말한다는 이유만으로 우리는 무턱대고 돌진해야 하는가? 또한 우리는 사람들을 해방시켜 새로운 종류의 노예 상태에 굴복하게 하려는 것이 아니라, 그들의 소망을 실현하게 하려는 것이다. 그 소망이 우리의 것과 아무리 달라도 말이다. 독선적이고 편협한 해방자들은 이를 해낼 수 없다. 대개 그들은 제거한 엉성한 노예제보다 더 체계적이어서 오히려 더 나쁜 노예제를 강요한다. </p>
+
+        <p>대체 누가 (자기자신이 아닌) 다른 이를 해방시키고 싶어 할까? 분명 자유의 (추상적인) 이점 때문이 아니라, 자유가 발전을 자유롭게 하고 따라서 행복으로 이끄는 최선의 길이기 때문이다. 우리는 사람들이 미소 지을 수 있도록 해방시키고자 한다. 우리 스스로 미소 짓는 법을 잊고 아직 기억하는 이들에게 찡그린 얼굴을 하고 있다면, 과연 이를 이룰 수 있겠는가? 그렇다면 우리가 제거하고자 하는 질병, 즉 청교도적 독선이라는 질병과 맞먹는 또 다른 질병을 퍼뜨리게 되지 않을까? 헌신과 유머가 양립할 수 없다고 반박하지 마라. 소크라테스는 그 반대의 훌륭한 사례다. 가장 어려운 과업일수록 가장 가벼운 손길이 필요하다. 그렇지 않으면 그 완성이 자유로 이어지지 않고, 대체한 것보다 훨씬 더 나쁜 폭정으로 이어질 것이다.</p>
+
+            <p style="text-align:right; font-style:italic;">2025.10.28</p>
+
 
         </div>
     </body>
