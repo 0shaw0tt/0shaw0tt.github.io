@@ -1,0 +1,93 @@
+#fnref-justauser {
+    position: absolute;
+    top: 355px; left: 478px;
+}
+
+div.two_images {
+    overflow: auto;
+    width: 1000px;
+    padding-top: 96px;
+}
+    div.two_images figure {
+        float: left;
+        width: 500px;
+    }
+
+    div.two_images figcaption {
+        font-style: italic;
+    }
+
+    div.two_images figure:last-child figcaption {
+        text-align: right;
+    }
+
+#appendix {
+    font-size: 14px;
+    padding-top: 360px;
+    font-family: monospace;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#appendix h2 {
+    padding-top: 87px;
+    font-size: 14px;
+    color: red;
+    line-height: 20px;
+}
+
+table {
+    border-spacing: 0;
+}
+
+table ul {
+    margin: 0; padding: 0;
+    list-style: none;
+}
+
+th {text-align: left}
+
+th,td {
+    padding: 7px 3ex 16px;
+    vertical-align: top;
+}
+    td.forkcell {
+        padding: 7px 3ex 16px !important;
+        font-weight: normal !important;
+    }
+
+td p:first-child {
+    padding-top: 0;
+}
+
+td p:last-child {padding-bottom: 0;}
+
+th:last-child,
+td:last-child {
+    padding-right:0;
+}
+th:first-child,
+td:first-child {
+    padding-left:0;
+}
+table#users_imagined_table tr > td:first-child {
+    font-weight: bold;
+}
+
+table#users_imagined_table td:nth-child(3) {
+    white-space: nowrap;
+}
+
+table#HCI_table th:first-child {
+    text-align: right;
+}
+
+td,th {
+    border-bottom: 1px solid #333;
+}
+
+
+table#HCI_table {
+    font-size: 15px;
+}
+
