@@ -141,17 +141,3 @@ a.footnote {
         .footnotes-processed a.footnote:before {content:'['}
             .footnotes-processed a.footnote:after {content:']'}
 
-.marquee-container {
-    display: flex;
-    align-items: center;
-}
-
-.marquee-container marquee {
-    flex: 1;
-}
-
-.marquee-container img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
