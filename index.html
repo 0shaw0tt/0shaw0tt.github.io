@@ -36,6 +36,88 @@
                 <p style="text-align:center;">contact: <a href="mailto:yangsy200@gmail.com">yangsy200 [at] gmail.com</a><br>if you want to see the list of posts: <a href="./list-of-posts.html">click here</a></p>
             </header>
 
+            <h2 id="practice-models-views-scientific-theories">A practice on models and the views of scientific theories</h2>
+
+            <p>While researching models in scientific theories recently, I came across two articles--"<a href="https://plato.stanford.edu/entries/models-science/" target="_blank" rel="noopener noreferrer">Models in science</a>" and "<a href="https://plato.stanford.edu/entries/structure-scientific-theories/" target="_blank" rel="noopener noreferrer">The structure of scientific theories</a>". Both were rich articles containing discussions of various perspectives on models explicitly or implicitly assumed in scientific theories. And while reading, I thought that the discussion of scientific models in "Models in science" can be connected to the three views of scientific theories discussed in "The structure of scientific theories", which were the syntactic, semantic, and pragmatic views. That is what I will do in this post.</p>
+            <p>Of course, these two classifications should not be treated as classifications along the same dimension. The different kinds of models--scale models, analogical models, idealized models, and so on--are types of scientific models, whereas the syntactic, semantic, and pragmatic views are different ways of understanding scientific theories.</p>
+            <p>However, I do think that it would be a good practice to ask which aspects of a model become visible from each perspective, and which perspective is most adequate for explaining what is distinctive about that type of model. This is because the three distinctions of the syntactic, semantic, and pragmatic views of theory do not feel like three completely different approaches, but rather like extensions of one another. This is further clarified by Carnap's words, which are also quoted in the article above.</p>
+            <blockquote><p>If in an investigation explicit reference is made to the speaker, or, to put it in more general terms, to the user of a language, then we assign it to the field of <i>pragmatics</i>. (Whether in this case reference to designata is made or not makes no difference for this classification.) If we abstract from the user of the language and analyze only the expressions and their designata, we are in the field of <i>semantics</i>. And if, finally, we abstract from the designata also and analyze only the relations between the expressions, we are in (logical) <i>syntax</i>. The whole science of language, consisting of the three parts mentioned, is called <i>semiotic</i>.<a class="footnote" href="#fn-carnap-r-1942">1</a></p></blockquote>
+            <p>We should also note that these three views are all containing both descriptive perspective and prescriptive(normative) characterization at the same time. In addition to that, pragmatic view resists normative terms set by two other views.</p>
+
+            <p>Let's start by saying that the three views can be the way of analyzing the same model at different levels of abstraction.</p>
+            <p>At the pragmatic level, we can ask: "How is it used in scientific practice?", "For what purpose?", and more.</p>
+            <p>If we abstract from the users and their uses--like Carnap had suggested earlier--we arrive at the semantic level. Here, we can ask: ""What does the model represent?", "What relation holds between the model and what it represents?", and more.</p>
+            <p>If we then abstract from the designata or target systems, we arrive at the syntactic level. Now, we can ask: "What is the formal structure of the model?", "What formal relations hold among them?", and more.</p>
+            <p>Moving back and forth between these perspectives, we can ask: "What does each view allow us to say about this model, and which aspects of the model cannot be captured when we move to a more abstract level?".</p>
+
+            <p>There are far too many types of models to speak of in such a general way. Now, as mentioned earlier, let's be more specific and proceed with the task of 'moving back and forth between these perspectives' for a single type of model. In this post, the work was done on <i>scale models</i> and <i>analogical models.</i></p>
+
+            <h3>Scale models</h3>
+            <p>A scale model is a model whose relevant dimensions are systematically scaled relative to those of its target. A familiar example is a scale model of an aircraft used in a wind tunnel.</p>
+            <p>From the syntactic perspective, we might represent the model and its target system as structures</p>
+            $$
+            M'=\langle X',R'_1,R'_2,\ldots\rangle
+            $$
+            <p>and</p>
+            $$
+            M=\langle X,R_1,R_2,\ldots\rangle.
+            $$
+            <p>A scaling relation such as</p>
+            $$
+            \frac{L'}{L}=\lambda
+            $$
+            <p>can then be formally specified.</p>
+            <p>This perspective tells us about the structure of the model itself and about formal relations such as scaling relations.</p>
+            <p>However, it cannot be itself explain why M' is a model of the aircraft. The formal structure does not contain, by itself, the fact that it represents a particular target system.</p>
+            <p>Now move on to the semantic perspective. The semantic perspective captures something more fundamental:</p>
+            $$
+            M' \longrightarrow M.
+            $$
+            <p>The scale model is a representation of a target system, and the relation between the two involves systematic correspondences between their relevant structures or properties.</p>
+            <p>For example, the dimensions of the model may be related to those of the aircraft by a scaling factor. More importantly, in scientific applications, the model is constructed so that certain relevant relations or quantities are preserved under the scaling.</p>
+            <p>Lastly, the pragmatic perspective adds another important dimension. A scale model is not constructed simply because scaling is possible. It is constructed for some purpose.</p>
+            <p>For example, researchers may be interested in lift, drag, or some other aerodynamic phenomenon. The model therefore need not preserve every property of the original aircraft equally well. Which properties must be preserved depends partly on what the model is being used to investigate.</p>
+            <p>The pragmatic perspective therefore helps to explain why a particular scaling relation and a particular set of preserved properties are scientifically relevant.</p>
+
+            <h3>Analogical models</h3>
+            <p>Now let's move on to analogical models. The key point of analogical models is that the model and the target system are not the same type of physical system. Typical examples include the Bohr model, which likens a hydrogen atom to the solar system, and models that liken an electrical circuit to a tube through which fluid flows.</p>
+            <p>First, looking at it from a syntactic view, it is indeed possible to represent analogical models as formal structures. For example, if we represent electrical circuits and fluid systems as formal structures,</p>
+            $$
+            M_e=\langle V,I,R,\ldots\rangle
+            $$
+            <p>and</p>
+            $$
+            M_f=\langle P,Q,R_f,\ldots\rangle.
+            $$
+            <p>We can then specify formal correspondences such as</p>
+            $$
+            V\leftrightarrow P, \qquad I\leftrightarrow Q.
+            $$
+            <p>In this way, it is possible to mathematically describe the relationship shared by the two structures.</p>
+            <p>However, it is difficult to understand why such correspondence can function as an analogy based solely on a pure syntactic description. This is because correspondence does not necessarily lead to a meaningful analogy.</p>
+            <p>Next, let's move on to the semantic view. When dealing with scale models previously, it was possible to think of the model and the target system as roughly scaled-down or scaled-down versions of the same type of system. In contrast, this way of thinking is impossible with analogical models. Nevertheless, specific relationships do correspond. For example, the pressure difference corresponds to the voltage difference, and the flow rate corresponds to the current.</p>
+            <p>Here, we need to address the difference between formal analogy and material analogy, which is an important distinction when explaining scientific analogy. Roughly speaking, a formal analogy is one where the formal structure of the relationship is similar, whereas a material analogy is an analogy that includes physical and content similarities beyond that.</p>
+            <p>The taxonomy was originally introduced by Hesse<a class="footnote" href="#fn-hesse-m-1963">2</a>. Hesse distinguishes between <i>material analogy</i> and <i>formal analogy</i> not according to the kind of analogy on which the inference is based. A material analogy relies on scientifically relevant similarities between the model and the target that can be recognized independently of the analogical argument. It also involves the expectation that corresponding causal relations hold in the target. For example, an inference from the effects of a vaccine on mice to its effects on humans may be a material analogy if mice and humans are independently known to share relevant properties of their immune systems.</p>
+            <p>In contrast, a formal analogy does not rely on such material similarities. Instead, the source and target are connected by an isomorphism: a one-to-one correspondence between their terms and structural relations. The corresponding terms need not themselves be similar; what makes them analogous is that they play structurally similar roles in their respective domains.<a class="footnote" href="#fn-nappo-f-2022">3</a>The analogy between fluid flow and electricity is a plausible example: pressure difference corresponds to voltage, and flow rate to current, although these quantities are not materially similar. The analogy between the solar system and the atom in the Bohr model can likewise be understood in terms of structural correspondences, such as the correspondence between central attraction and orbital motion. In this sense, both are examples of analogical models that employ formal analogy in Hesse's sense.<a class="footnote" href="#fn-note-on-hesse-and-bartha">4</a></p>
+            <p>A material analogy relies on similarities between the source and target that can be recognized independently of the analogical argument. However, the fact that a similarity is not currently recognized does not imply that no such similarity exists. Historically, the way science operates has been quite capricious, so there are certainly times when a sense of similarity, or a sense of symmetry, acts more decisively than recognized similarities.</p>
+            <p>Also, there exists a difficulty related to this 'recognized' similarities. Some similarities may be relevant to a scientific problem without being clearly expressible in the scientific vocabulary currently available.</p>
+            <p>For this reason, I'd like to say that it may be more appropriate to understand formal analogy as an analogy whose <i>justification or use</i> does not depend on material similarity.</p>
+            <p>If we view this from a pragmatic perspective, the problem seems likely to become clearer. Asking "Is this correspondence scientifically relevant?" in the context of an analogy is not a purely semantic question. That judgment involves various pragmatic contexts, such as what problem is being solved and which properties are considered salient.</p>
+
+            <p style="text-align:right; font-style:italic;">2026.08.31</p>
+
+            <div class="footnotes">
+                <hr>
+                    <ol>
+                        <li id="fn-carnap-r-1942"><p>Carnap, R. (1942). Introduction to Semantics. Cambridge, MA: Harvard University Press.</p></li>
+                        <li id="fn-hesse-m-1963"><p>Hesse, M. (1963). Models and Analogies in Science. University of Notre Dame Press.</p></li>
+                        <li id="fn-nappo-f-2022"><p>Nappo, F. (2022). «Close encounters with scientific analogies of the third kind». <i>Journal for General Philosophy of Science</i>.</p></li>
+                        <li id="fn-note-on-hesse-and-bartha"><p>Based on this distinction, Hesse argues that certain material analogies can have a confirmatory role. Even though Hesse eliminated formal analogies from the case, there are people who are skeptical of this claim. Bartha's argument in the Bayesian sense will be the representative example.</p></li>
+                    </ol>
+            </div>
+            
+            <p style="text-align:center">* * *</p>
+
             <h2 id="share-bridgman-pw-logic-intro">[공유] Percy Williams Bridgman, ⌜현대 물리학의 논리⌟ 중 개관</h2>
 
             <p>아인슈타인의 특수 및 일반 상대성 이론을 분석한 세부 사항들을 우리가 영원히 수용해야 할지에 대한 우리 입장이 어떻든, 분명한 것은 이 이론에 의해 물리학이 영구히 변했다는 것이다. 확신 있게 받아들였던 고전 개념들이 실제 상황을 만족시키기에 적절하지 않다는 사실을 알게 된 것은 놀라운 충격이었으며, 그 결과 이 발견의 충격은 적어도 일부만이라도 변치 말아야 한다는 우리의 개념 구조 전체를 비판적으로 보게 만들었다. 이 사건 이후 상황을 반성적으로 고찰해 보면, 과거 개념들이 부적절했다는 점을 확신하기 위해서는 상대론으로 안내하는 새로운 실험 사실들이 꼭 필요했던 것이 아니라, 적어도 아인슈타인이 했던 것의 가능성에 대비할 수 있도록 우리가 충분히 치밀하게 분석했어야 했다는 점이다.</p>
