@@ -141,3 +141,13 @@ a.footnote {
         .footnotes-processed a.footnote:before {content:'['}
             .footnotes-processed a.footnote:after {content:']'}
 
+#screensaver-object {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  font-size: 30px;
+  z-index: 9999;
+
+  pointer-events: none;
+}
